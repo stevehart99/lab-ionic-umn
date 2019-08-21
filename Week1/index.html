@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/ionic.bundle.css" />
+</head>
+
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title>Budget Planner</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>Input Pengeluaran</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-item style="color:black">
+                        <ion-label position="stacked">Nama Pengeluaran</ion-label>
+                        <ion-input type="text" id="txtval">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="stacked">Jumlah Pengeluaran</ion-label>
+                        <ion-input type="number" id="txtjml">
+                        </ion-input>
+                    </ion-item>
+                    <ion-button style="float: right; margin:10px;" type="submit" onclick="addData()">
+                        <ion-icon name="add"></ion-icon>Tambah
+                    </ion-button>
+
+                    <ion-button type="submit" style="float: right; color: red; margin:10px;" fill="outline"
+                        color="white" onclick="clearData()">
+                        <ion-icon name="close"></ion-icon>Hapus
+                    </ion-button>
+            </ion-card>
+            <ion-toolbar id="list" style="padding-bottom:40px">
+
+            </ion-toolbar>
+            </ion-card-content>
+            <ion-text id="sum" style="padding-left: 15px">Total Pengeluaran : Rp. 0,00</ion-text>
+        </ion-content>
+        <ion-alert-controller></ion-alert-controller>
+    </ion-app>
+    <script src="app.js"></script>
+</body>
+
+</html>
