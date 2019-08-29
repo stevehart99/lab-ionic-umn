@@ -21,4 +21,8 @@ export class RecipesPage implements OnInit {
   showDetail(recipeId: string) {
     console.log(this.recipesService.getRecipe(recipeId));
   }
+  ionViewWillEnter() {
+
+    this.recipes = this.recipesService.getAllRecipes();
+  }
 }
