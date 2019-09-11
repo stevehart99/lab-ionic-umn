@@ -29,12 +29,9 @@ export class BookingsPage implements OnInit {
     this.book = this.bookService.books;
   }
 
-  deleteBooking(id: string, slidingItem: IonItemSliding) {
+  deleteBooking(book: any, slidingItem: IonItemSliding) {
     slidingItem.close();
-    this.book = this.book.filter(book => {
-      return book.id !== id;
-    });
-    console.log("hehe");
-    console.log(this.book);
+    this.book.splice(this.book.indexOf(book), 1);
+    this.bookService.deleteBooking(book);
   }
 }

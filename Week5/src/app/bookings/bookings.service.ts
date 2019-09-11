@@ -34,5 +34,8 @@ export class BookingsService {
     return [...this.book];
   }
 
+  deleteBooking(book: any) {
+    this.book.splice(this.book.indexOf(book), 1);
+  }
   constructor() { }
 }
