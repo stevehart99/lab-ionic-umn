@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary" margin (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title text-center>{{ loadedPlaces.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <img [src]="loadedPlaces.imageUrl">
+          </ion-item>
+          <ion-item>
+            Nama : {{loadedPlaces.title}}
+          </ion-item>
+          <ion-item>
+            Deskripsi : {{loadedPlaces.description}}
+          </ion-item>
+          <ion-item>
+            Harga : {{loadedPlaces.price | currency}}
+          </ion-item>
+          <ion-button expand="full" (click)="onBookPlace()">Book</ion-button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
