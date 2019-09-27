@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>UMN UKM</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card padding *ngFor="let ukm of loadUkm">
+    <ion-card-header>
+      <ion-card-title>
+        {{ukm.title}}
+      </ion-card-title>
+      <ion-card-subtitle>
+        {{ukm.description}}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-item lines="none">
+      <ion-button color="primary" (click)="presentAlert(ukm)" slot="end">Join</ion-button>
+    </ion-item>
+  </ion-card>
+</ion-content>

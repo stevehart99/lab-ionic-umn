@@ -49,22 +49,5 @@ export class PlaceDetailPage implements OnInit {
           console.log('BOOKED');
         }
       });
-
-
-  }
-
-  bookThisPlace() {
-    this.loadingCtrl.create({
-      keyboardClose: true,
-      message: 'Booking the place...'
-    })
-      .then(loadingEl => {
-        loadingEl.present();
-        setTimeout(() => {
-          loadingEl.dismiss();
-          this.modalCtrl.dismiss({ message: 'booked!' },
-            'confirm');
-        }, 2000)
-      });
   }
 }

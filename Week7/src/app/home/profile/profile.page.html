@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button margin (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>UMN UKM</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col align="center">
+        <img
+          src="https://steemitimages.com/640x0/https://maxcdn.icons8.com/Share/icon/Users//user_male_circle_filled1600.png"
+          width="100" height="100">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col align="center">
+        <h4><b>Steven</b></h4>
+        <p>NIM : 00000013433</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col align="center">
+        My UKMS
+      </ion-col>
+    </ion-row>
+    <ion-col size="8" size-sm="8" offset-sm="2" *ngFor="let ukm of loadUkm">
+      <ion-item-sliding #slidingItem>
+        <ion-item lines="none">
+          <ion-label>{{ukm.title}}</ion-label>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="deleteUKM(ukm.id, slidingItem)">
+            <ion-icon name="close" slot="icon-only"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-col>
+  </ion-grid>
+</ion-content>
