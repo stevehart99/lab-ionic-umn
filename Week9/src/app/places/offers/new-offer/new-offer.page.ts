@@ -23,7 +23,7 @@ export class NewOfferPage implements OnInit {
       }),
       price: new FormControl(null, {
         updateOn: 'blur',
-        validators: [Validators.required, Validators.min(1), Validators.pattern('[0-9]*')]
+        validators: [Validators.required, Validators.min(1)]
       }),
       dateFrom: new FormControl(null, {
         updateOn: 'blur',

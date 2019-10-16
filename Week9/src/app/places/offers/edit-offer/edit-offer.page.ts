@@ -37,6 +37,10 @@ export class EditOfferPage implements OnInit {
           updateOn: 'blur',
           validators: [Validators.required, Validators.maxLength(180)]
         }),
+        price: new FormControl(this.place.price, {
+          updateOn: 'blur',
+          validators: [Validators.required, Validators.min(1)]
+        })
       });
     })
 
