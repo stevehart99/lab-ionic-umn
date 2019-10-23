@@ -55,19 +55,4 @@ export class EditOfferPage implements OnInit, OnDestroy {
       this.placeSub.unsubscribe();
     }
   }
-
-  onCreateOffer() {
-    if (!this.form.valid) {
-      return;
-    }
-    this.placesService.addPlace(
-      this.form.value.title,
-      this.form.value.description,
-      +this.form.value.price,
-      new Date(this.form.value.dateFrom),
-      new Date(this.form.value.dateTo),
-    );
-    this.form.reset();
-    this.router.navigate(['/places/tabs/offer']);
-  }
 }
