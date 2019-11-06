@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Bikes Collection
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ng-container *ngIf="!todos || todos.length == 0">
+    <div *ngFor="let n of [0,1,2]" padding>
+      <ion-skeleton-text></ion-skeleton-text>
+      <p>
+        <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+      </p>
+    </div>
+  </ng-container> -->
+
+  <ion-card padding *ngFor="let item of bikes">
+    <ion-card-header>
+      <ion-card-title>
+        {{item.name}}
+      </ion-card-title>
+      <ion-card-title>
+        <ion-icon name="speedometer" color="primary"></ion-icon>
+        {{item.category}}
+      </ion-card-title>
+      <ion-card-title>
+        <ion-icon name="wallet" color="success"></ion-icon>
+        {{item.price | currency:'IDR':'symbol-narrow':'4.2-2' }}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-item lines="none">
+      <ion-button color="secondary" [routerLink]="['/details', item.id]" slot="end">
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+
+      <ion-button color="danger" (click)="remove(item)" slot="end">
+        <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-card>
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/details" routerDirection="forward" color="success">
+      <ion-icon name="create"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
